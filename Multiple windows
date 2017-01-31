@@ -1,0 +1,40 @@
+package com.Signin.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class MultipleWindowHandle {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		WebDriver f = new FirefoxDriver();
+	    f.get("https://accounts.google.com/ServiceLogin?sacu=1&scc=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&osid=1&service=mail&ss=1&ltmpl=default&rm=false#identifier");	
+//CREATE NEW  ACCOUNT LINK PATH       
+	    f.findElement(By.xpath(".//span[@id='link-signup']/a")).click();
+	    f.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[1]/p/a")).click();
+ // NEW WIDNOW CODE      
+         String strMainWindowHnd=f.getWindowHandle();
+        System.out.println("Window title"+f.getTitle());
+        f.findElement(By.linkText("Learn more")).click();
+        
+       Set<String> strHandles=f.getWindowHandles();
+        for(String handle:strHandles)
+        {
+        	f.switchTo().window(handle);
+        	String strTitle=f.getTitle();
+        	if(strTitle.equalsIgnoreCase("Learn more"))
+        	{
+        		System.out.println(f.getTitle());
+        		f.findElement(By.xpath(".//*[@id='link-signup']/a")).click();
+        	}
+        }
+        
+        f.quit();
+        
+        
+        
+        
+}
+}
