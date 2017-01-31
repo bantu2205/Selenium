@@ -1,0 +1,75 @@
+package com.Signin.test;
+
+import java.awt.Desktop.Action;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Set;
+import java.util.List;
+import javax.sound.sampled.Line;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+public class SigninDiffrentAccount {
+
+	@SuppressWarnings("unused")
+	public static void main(String[] args) throws InterruptedException, ParseException {
+		// TODO Auto-generated method stub
+
+		WebDriver f = new FirefoxDriver();
+	    f.get("https://accounts.google.com/ServiceLogin?sacu=1&scc=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&osid=1&service=mail&ss=1&ltmpl=default&rm=false#identifier");	
+//USER NAME TEST CASE 	   
+	   /* f.findElement(By.xpath(".//*[@id='Email']")).sendKeys("bantu.qa@gmail.com");
+	    Thread.sleep(5000);
+        f.findElement(By.xpath(".//*[@id='next']")).click();
+//PASSOWRD NAME TEST CASE 	
+        f.findElement(By.xpath(".//input[@id='Passwd'][@name='Passwd']")).sendKeys("kpcl123$");
+        Thread.sleep(5000);
+//SIGN IN TEST CASE        
+        f.findElement(By.xpath(".//input[@id='signIn'][@value='Sign in']")).click();
+        Thread.sleep(5000);*/
+//CREATE NEW  ACCOUNT LINK PATH       
+	    f.findElement(By.xpath(".//span[@id='link-signup']/a")).click();
+ 
+	    f.findElement(By.xpath(".//*[@id='FirstName']")).sendKeys("abcdefg");
+	    f.findElement(By.xpath(".//*[@id='LastName']")).sendKeys("bee");
+	    f.findElement(By.xpath(".//*[@id='GmailAddress']")).sendKeys("abcdefg123");
+	    f.findElement(By.xpath(".//*[@id='Passwd']")).sendKeys("abcd123");
+	    f.findElement(By.xpath(".//*[@id='PasswdAgain']")).sendKeys("abcd123");
+	    List<WebElement> list = f.findElements(By.xpath(".//*[@id='Gender']/div[1]"));
+	    
+	    System.out.println(list.size());
+	    list.get(0).getAttribute(f.getTitle());
+	    
+	    
+	   //BIRTH DAY
+	    
+	    /*java.util.Date date = new SimpleDateFormat("MMM",Locale.ENGLISH).parse("janury");
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		int month =(Calendar.FEBRUARY)+1;
+		String locator ="";
+		locator=locator.replaceAll(regex,""+month+"");
+		f.findElement(By.xpath(locator)).click();
+		Thread.sleep(5000);*/
+		
+	    
+		
+	    
+	    
+	    
+	    
+	    
+	    
+       f.quit();
+        
+        
+        
+        
+}
+}
