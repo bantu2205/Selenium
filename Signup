@@ -24,11 +24,11 @@ public class SigninDiffrentAccount {
 		WebDriver f = new FirefoxDriver();
 	    f.get("https://accounts.google.com/ServiceLogin?sacu=1&scc=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&osid=1&service=mail&ss=1&ltmpl=default&rm=false#identifier");	
 //USER NAME TEST CASE 	   
-	   /* f.findElement(By.xpath(".//*[@id='Email']")).sendKeys("bantu.qa@gmail.com");
+	   /* f.findElement(By.xpath(".//*[@id='Email']")).sendKeys("123@gmail.com");
 	    Thread.sleep(5000);
         f.findElement(By.xpath(".//*[@id='next']")).click();
 //PASSOWRD NAME TEST CASE 	
-        f.findElement(By.xpath(".//input[@id='Passwd'][@name='Passwd']")).sendKeys("kpcl123$");
+        f.findElement(By.xpath(".//input[@id='Passwd'][@name='Passwd']")).sendKeys("kl123$");
         Thread.sleep(5000);
 //SIGN IN TEST CASE        
         f.findElement(By.xpath(".//input[@id='signIn'][@value='Sign in']")).click();
